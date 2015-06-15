@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class viewOne_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -50,13 +50,14 @@ public final class viewOne_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("<p>vista numero uno</p>\n");
-      out.write("<p>");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${saludo}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("</p>\n");
       out.write("\n");
+      out.write("<c:forEach  items=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${listaDatos}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("\" var=\"dato\">\n");
+      out.write("\t");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${dato.nombre}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("\n");
-      out.write("<p></p>");
+      out.write("</c:forEach>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
