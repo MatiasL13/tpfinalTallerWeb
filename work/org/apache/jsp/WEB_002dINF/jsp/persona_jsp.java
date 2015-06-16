@@ -11,6 +11,8 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List _jspx_dependants;
 
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems;
+
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
 
@@ -19,11 +21,13 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   public void _jspInit() {
+    _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
+    _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -51,13 +55,22 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\n");
-      out.write("<c:forEach  items=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${listaDatos}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("\" var=\"dato\">\n");
-      out.write("\t");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${dato.nombre}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("\n");
-      out.write("</c:forEach>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<table class=\"table\">\n");
+      out.write("\t<tr>\n");
+      out.write("\t\t<td>nombre</td>\n");
+      out.write("\t\t<td>apellido</td>\n");
+      out.write("\t\t<td>edad</td>\n");
+      out.write("\t\t<td>email</td>\n");
+      out.write("\t</tr>\n");
+      out.write("\t");
+      if (_jspx_meth_c_005fforEach_005f0(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("\n");
+      out.write("</table>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -69,5 +82,56 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_c_005fforEach_005f0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fforEach_005f0.setParent(null);
+    // /WEB-INF/jsp/persona.jsp(12,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/jsp/persona.jsp(12,1) '${personas}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${personas}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/jsp/persona.jsp(12,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setVar("dato");
+    int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_005fforEach_005f0 = _jspx_th_c_005fforEach_005f0.doStartTag();
+      if (_jspx_eval_c_005fforEach_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("\t<tr>\n");
+          out.write("\t\t<td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${dato.nombre}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\n");
+          out.write("\t\t<td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${dato.apellido}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\n");
+          out.write("\t\t<td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${dato.edad}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\n");
+          out.write("\t\t<td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${dato.email}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\n");
+          out.write("\t</tr>\n");
+          int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_005fforEach_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_005fforEach_005f0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_005fforEach_005f0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_005fforEach_005f0.doFinally();
+      _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.reuse(_jspx_th_c_005fforEach_005f0);
+    }
+    return false;
   }
 }

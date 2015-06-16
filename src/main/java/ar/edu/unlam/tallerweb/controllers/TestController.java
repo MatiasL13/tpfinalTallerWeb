@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unlam.tallerweb.domain.DatosPersonas;
 import ar.edu.unlam.tallerweb.domain.Persona;
 import ar.edu.unlam.tallerweb.domain.TablaPersonas;
 
@@ -54,36 +53,33 @@ public class TestController {
 		return miVista;
 	}
 	@RequestMapping("/persona")
-	public ModelAndView tablaDePersonas(){
+	public ModelAndView mostrarPersonas(){		
 		
-		Persona uno = new Persona();
-		uno.setNombre("matias");
-		DatosPersonas datos = new DatosPersonas();
-		TablaPersonas.getInstance().crearPersona(uno);	
-		List<Persona> personas = TablaPersonas.getInstance().listarTodas();
-		ArrayList<DatosPersonas> listaDatos = new ArrayList<DatosPersonas>();
-		
-		for (Persona persona : personas) {
-			
-			datos.nombre =  persona.getNombre();
-			datos.apellido = persona.getApellido();
-			datos.edad = persona.getEdad();
-			datos.email = persona.getEmail();
-			listaDatos.add(datos);
-			
-		}
-		
-		
-		for (DatosPersonas entry : listaDatos) {
-			System.out.println(entry.nombre);
-		}
-				
+		List<Persona> personas = TablaPersonas.getInstance().listarTodas();	
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("listaDatos",listaDatos);
+		modelAndView.addObject("personas",personas);
 		modelAndView.setViewName("persona");
 		return modelAndView;
 		
 	}
+	
+	@RequestMapping("/persona/crear")
+	public ModelAndView crearPersonas(){
+		
+		Persona uno = new Persona();
+		uno.setNombre("juan");
+		uno.setApellido("alvarez");
+		uno.setEdad(21);
+		uno.setEmail("pepe@hotmail.com");		
+		TablaPersonas.getInstance().crearPersona(uno);	
+		List<Persona> personas = TablaPersonas.getInstance().listarTodas();	
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("personas",personas);
+		modelAndView.setViewName("persona");
+		return modelAndView;
+		
+	}
+	
 	
 		
 }
