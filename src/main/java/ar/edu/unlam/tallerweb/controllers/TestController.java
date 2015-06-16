@@ -1,13 +1,13 @@
 package ar.edu.unlam.tallerweb.controllers;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Iterator;
-import java.util.Map;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -66,19 +66,21 @@ public class TestController {
 	@RequestMapping("/persona/crear")
 	public ModelAndView crearPersonas(){
 		
-		Persona uno = new Persona();
-		uno.setNombre("juan");
-		uno.setApellido("alvarez");
-		uno.setEdad(21);
-		uno.setEmail("pepe@hotmail.com");		
-		TablaPersonas.getInstance().crearPersona(uno);	
-		List<Persona> personas = TablaPersonas.getInstance().listarTodas();	
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("personas",personas);
-		modelAndView.setViewName("persona");
-		return modelAndView;
+		 return new ModelAndView("crearPersona", "command", new Persona());
 		
 	}
+	
+	@RequestMapping(value = "/persona/addContact", method = RequestMethod.POST)
+    public String addContact(@ModelAttribute("persona")
+                            Persona contact, BindingResult result) {
+         
+        System.out.println("First Name:" + contact.getNombre() + 
+                    "Last Name:" + contact.getApellido());
+        TablaPersonas.getInstance().crearPersona(contact);	
+        return "redirect:";
+    }
+     
+   
 	
 	
 		

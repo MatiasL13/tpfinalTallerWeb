@@ -70,7 +70,10 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\n");
       out.write("\n");
-      out.write("</table>");
+      out.write("</table>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<button><a href=\"/sitio/test/persona/crear\">Cargar Contacto</a></button>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

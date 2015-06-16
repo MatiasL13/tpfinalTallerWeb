@@ -19,3 +19,6 @@
 </c:forEach>
 
 </table>
+
+
+<button><a href="/sitio/test/persona/crear">Cargar Contacto</a></button>
