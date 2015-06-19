@@ -54,11 +54,25 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
+      out.write("<html>\n");
+      out.write("<head>\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<table class=\"table\">\n");
+      out.write("\t\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"");
+      out.print(request.getContextPath());
+      out.write("/css/bootstrap.css\"/>\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"");
+      out.print(request.getContextPath());
+      out.write("/css/style.css\"/>\n");
+      out.write("\t<title></title>\n");
+      out.write("</head>\n");
+      out.write("<body>\n");
+      out.write("<div>\n");
+      out.write("<div>\n");
+      out.write("\t<legend>Lista de Contactos</legend>\n");
+      out.write("</div>\n");
+      out.write("\t<div class=\"col-md-10 col-md-offset-1 center\">\n");
+      out.write("\t<table class=\"table\">\n");
       out.write("\t<tr>\n");
       out.write("\t\t<td>nombre</td>\n");
       out.write("\t\t<td>apellido</td>\n");
@@ -70,10 +84,17 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\n");
       out.write("\n");
-      out.write("</table>\n");
+      out.write("\t</table>\n");
       out.write("\n");
       out.write("\n");
-      out.write("<button><a href=\"/sitio/test/persona/crear\">Cargar Contacto</a></button>");
+      out.write("\t</div>\n");
+      out.write("</div>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<button class=\"btn btn-success\"><a href=\"/sitio/test/persona/crear\">Cargar Contacto</a></button>\n");
+      out.write("\n");
+      out.write("</body>\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -95,9 +116,9 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/jsp/persona.jsp(12,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/jsp/persona.jsp(12,1) '${personas}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${personas}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/jsp/persona.jsp(12,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/persona.jsp(22,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/jsp/persona.jsp(22,1) '${personas}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${personas}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/jsp/persona.jsp(22,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("dato");
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -119,6 +140,7 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${dato.email}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("</td>\n");
           out.write("\t</tr>\n");
+          out.write("\t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;

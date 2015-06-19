@@ -50,6 +50,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
+      out.write("\n");
       out.write("<html>\n");
       out.write("<head>\n");
       out.write("<title>Ejemplo SpringMVC</title>\n");

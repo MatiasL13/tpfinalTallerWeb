@@ -74,8 +74,6 @@ public class TestController {
     public String addContact(@ModelAttribute("persona")
                             Persona contact, BindingResult result) {
          
-        System.out.println("First Name:" + contact.getNombre() + 
-                    "Last Name:" + contact.getApellido());
         TablaPersonas.getInstance().crearPersona(contact);	
         return "redirect:";
     }
