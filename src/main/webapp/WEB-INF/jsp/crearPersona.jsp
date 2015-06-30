@@ -19,7 +19,7 @@
         <form:input  class="form-control"path="nombre"></form:input> 
     </div>
         
-    
+        
     <div class="form-group"><form:label path="apellido">Last Name</form:label>
         <form:input  class="form-control"path="apellido"></form:input>
     </div>
@@ -34,9 +34,9 @@
         <form:label path="edad">edad</form:label>
         <form:input  class="form-control"path="edad"></form:input>
     </div>
+    <form:input type="hidden"class="form-control" path="id" value="${dato.id}"></form:input>
             <input class="btn btn-success" type="submit" value="Add Contact">
       
-</tbody></table>    
      
 </form:form>
  </div>

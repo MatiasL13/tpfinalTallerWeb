@@ -1,8 +1,14 @@
 package ar.edu.unlam.tallerweb.controllers;
 
 
+import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,7 +24,8 @@ import ar.edu.unlam.tallerweb.domain.TablaPersonas;
 
 @Controller
 @RequestMapping("/test")
-public class TestController {
+public class TestController{
+
 	@RequestMapping("/testOne")
 	public ModelAndView testOne(){
 		ModelAndView modelAndView = new ModelAndView("viewTwo");
@@ -53,30 +60,61 @@ public class TestController {
 		return miVista;
 	}
 	@RequestMapping("/persona")
-	public ModelAndView mostrarPersonas(){		
-		
+	public ModelAndView mostrarPersonas() {		
 		List<Persona> personas = TablaPersonas.getInstance().listarTodas();	
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("personas",personas);
 		modelAndView.setViewName("persona");
+		modelAndView.addObject("command",new Persona());
 		return modelAndView;
 		
 	}
 	
 	@RequestMapping("/persona/crear")
 	public ModelAndView crearPersonas(){
-		
 		 return new ModelAndView("crearPersona", "command", new Persona());
-		
 	}
 	
 	@RequestMapping(value = "/persona/addContact", method = RequestMethod.POST)
     public String addContact(@ModelAttribute("persona")
                             Persona contact, BindingResult result) {
-         
-        TablaPersonas.getInstance().crearPersona(contact);	
+		Integer id = 0;
+		id = TablaPersonas.getInstance().total();
+		if(contact.getId() != null){
+			TablaPersonas.getInstance().modificarPersona(contact);
+		}
+		else{
+	        contact.setId(id);
+	        TablaPersonas.getInstance().crearPersona(contact);	
+		}
         return "redirect:";
     }
+	
+	@RequestMapping(value = "/persona/deleteContact", method = RequestMethod.POST)
+	public String deletePersona(@ModelAttribute("persona")
+							Persona contact, BindingResult result){
+
+		TablaPersonas.getInstance().removerPersona(contact);
+		return "redirect:";
+	}
+	@RequestMapping(value = "/persona/crear", method = RequestMethod.POST)
+	public ModelAndView modificarPersona(@ModelAttribute("persona")
+    								Persona contact){
+		ModelAndView modelAndView = new ModelAndView();
+		if (contact.getId() != null){
+			List<Persona> personas =  TablaPersonas.getInstance().listarTodas();
+			for(Persona persona : personas){
+				if (persona.getId() == contact.getId()){
+					modelAndView.addObject("command",persona);
+					modelAndView.setViewName("crearPersona");
+					return modelAndView;
+				}
+			}
+		}
+		
+		return new ModelAndView("crearPersona", "command", new Persona());
+		
+	}
      
    
 	

@@ -20,4 +20,30 @@ public class TablaPersonas {
     public List<Persona> listarTodas(){
         return this.personas;
     }
+    
+    public Integer total(){
+    	return this.personas.size();
+    }
+    
+    public Boolean removerPersona(Persona persona){
+    	for(Persona ele : personas)
+    	{
+    		if(ele.getId() == persona.getId()){
+    			return this.personas.remove(ele);
+    		}
+    	}
+    	return false;
+    }
+    public Boolean modificarPersona(Persona persona){
+    	for(Persona ele : personas)
+    	{
+    		if(ele.getId() == persona.getId()){
+    			 ele.setApellido(persona.getApellido());
+    			 ele.setEdad(persona.getEdad());
+    			 ele.setEmail(persona.getEmail());
+    			 ele.setNombre(persona.getNombre());
+    		}
+    	}
+    	return false;
+    }
 }
