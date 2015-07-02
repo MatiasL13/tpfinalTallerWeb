@@ -20,7 +20,6 @@
 		<td>edad</td>
 		<td>email</td>
 		<td>Acciones</td>
-		<td>id</td>
 	</tr>
 	<c:forEach  items="${personas}" var="dato">
 	<tr>
@@ -38,7 +37,6 @@
 					<input class="btn btn-info col-md-12" type="submit" value="Modificar">
 			    </form:form>
 		</td>
-		<td>${dato.id}</td>	
 	</tr>
 	</c:forEach>
 

@@ -79,7 +79,12 @@ public class TestController{
     public String addContact(@ModelAttribute("persona")
                             Persona contact, BindingResult result) {
 		Integer id = 0;
-		id = TablaPersonas.getInstance().total();
+		//id = TablaPersonas.getInstance().total();
+		for (Persona ele : TablaPersonas.getInstance().listarTodas())
+		{
+			if (ele.getId() >= id )
+				id = ele.getId() + 1;
+		}
 		if(contact.getId() != null){
 			TablaPersonas.getInstance().modificarPersona(contact);
 		}

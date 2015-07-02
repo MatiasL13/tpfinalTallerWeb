@@ -86,7 +86,6 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<td>edad</td>\n");
       out.write("\t\t<td>email</td>\n");
       out.write("\t\t<td>Acciones</td>\n");
-      out.write("\t\t<td>id</td>\n");
       out.write("\t</tr>\n");
       out.write("\t");
       if (_jspx_meth_c_005fforEach_005f0(_jspx_page_context))
@@ -125,9 +124,9 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/jsp/persona.jsp(25,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/jsp/persona.jsp(25,1) '${personas}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${personas}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/jsp/persona.jsp(25,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/persona.jsp(24,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/jsp/persona.jsp(24,1) '${personas}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${personas}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/jsp/persona.jsp(24,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("dato");
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -158,9 +157,6 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
             return true;
           out.write("\n");
           out.write("\t\t</td>\n");
-          out.write("\t\t<td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${dato.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("</td>\t\n");
           out.write("\t</tr>\n");
           out.write("\t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
@@ -190,11 +186,11 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.FormTag _jspx_th_form_005fform_005f0 = (org.springframework.web.servlet.tags.form.FormTag) _005fjspx_005ftagPool_005fform_005fform_0026_005fmethod_005fclass_005faction.get(org.springframework.web.servlet.tags.form.FormTag.class);
     _jspx_th_form_005fform_005f0.setPageContext(_jspx_page_context);
     _jspx_th_form_005fform_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/jsp/persona.jsp(32,7) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/persona.jsp(31,7) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fform_005f0.setMethod("post");
-    // /WEB-INF/jsp/persona.jsp(32,7) name = action type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/persona.jsp(31,7) name = action type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fform_005f0.setAction("deleteContact.html");
-    // /WEB-INF/jsp/persona.jsp(32,7) null
+    // /WEB-INF/jsp/persona.jsp(31,7) null
     _jspx_th_form_005fform_005f0.setDynamicAttribute(null, "class", new String("col-md-6"));
     int[] _jspx_push_body_count_form_005fform_005f0 = new int[] { 0 };
     try {
@@ -235,13 +231,13 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f0 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005fvalue_005ftype_005fpath_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f0.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/jsp/persona.jsp(33,11) null
+    // /WEB-INF/jsp/persona.jsp(32,11) null
     _jspx_th_form_005finput_005f0.setDynamicAttribute(null, "type", new String("hidden"));
-    // /WEB-INF/jsp/persona.jsp(33,11) null
+    // /WEB-INF/jsp/persona.jsp(32,11) null
     _jspx_th_form_005finput_005f0.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/jsp/persona.jsp(33,11) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/persona.jsp(32,11) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f0.setPath("id");
-    // /WEB-INF/jsp/persona.jsp(33,11) null
+    // /WEB-INF/jsp/persona.jsp(32,11) null
     _jspx_th_form_005finput_005f0.setDynamicAttribute(null, "value", (java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${dato.id}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_form_005finput_005f0 = new int[] { 0 };
     try {
@@ -268,11 +264,11 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.FormTag _jspx_th_form_005fform_005f1 = (org.springframework.web.servlet.tags.form.FormTag) _005fjspx_005ftagPool_005fform_005fform_0026_005fmethod_005fclass_005faction.get(org.springframework.web.servlet.tags.form.FormTag.class);
     _jspx_th_form_005fform_005f1.setPageContext(_jspx_page_context);
     _jspx_th_form_005fform_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/jsp/persona.jsp(36,7) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/persona.jsp(35,7) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fform_005f1.setMethod("post");
-    // /WEB-INF/jsp/persona.jsp(36,7) name = action type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/persona.jsp(35,7) name = action type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fform_005f1.setAction("crear");
-    // /WEB-INF/jsp/persona.jsp(36,7) null
+    // /WEB-INF/jsp/persona.jsp(35,7) null
     _jspx_th_form_005fform_005f1.setDynamicAttribute(null, "class", new String("col-md-6"));
     int[] _jspx_push_body_count_form_005fform_005f1 = new int[] { 0 };
     try {
@@ -313,13 +309,13 @@ public final class persona_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f1 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005fvalue_005ftype_005fpath_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f1.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f1);
-    // /WEB-INF/jsp/persona.jsp(37,11) null
+    // /WEB-INF/jsp/persona.jsp(36,11) null
     _jspx_th_form_005finput_005f1.setDynamicAttribute(null, "type", new String("hidden"));
-    // /WEB-INF/jsp/persona.jsp(37,11) null
+    // /WEB-INF/jsp/persona.jsp(36,11) null
     _jspx_th_form_005finput_005f1.setDynamicAttribute(null, "class", new String("form-control"));
-    // /WEB-INF/jsp/persona.jsp(37,11) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/persona.jsp(36,11) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f1.setPath("id");
-    // /WEB-INF/jsp/persona.jsp(37,11) null
+    // /WEB-INF/jsp/persona.jsp(36,11) null
     _jspx_th_form_005finput_005f1.setDynamicAttribute(null, "value", (java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${dato.id}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_form_005finput_005f1 = new int[] { 0 };
     try {
